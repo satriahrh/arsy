@@ -1,0 +1,23 @@
+os: linux
+
+dist: bionic
+
+branches:
+  only:
+    - master
+
+language: go
+
+env: GO111MODULE=on
+
+go:
+  - 1.12.5
+
+git:
+  depth: 1
+
+script:
+  - go test -count=1 -race ./... -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

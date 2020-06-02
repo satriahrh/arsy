@@ -31,7 +31,7 @@ type heavyCommandFunc func() error
 //				func() (bool, error) {
 //					return value < 4, nil
 //				},
-//				func() {
+//				func() error {
 //					fmt.Println("case 1")
 // 					return nil
 //				},
